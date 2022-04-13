@@ -5,6 +5,7 @@ UPGRADE NOTES:
 * The official Linux packages for the v1.2 series now require Linux kernel version 2.6.32 or later.
 * When making outgoing HTTPS or other TLS connections as a client, Terraform now requires the server to support TLS v1.2. TLS v1.0 and v1.1 are no longer supported. Any safely up-to-date server should support TLS 1.2, and mainstream web browsers have required it since 2020.
 * When making outgoing HTTPS or other TLS connections as a client, Terraform will no longer accept CA certificates signed using the SHA-1 hash function. Publicly trusted Certificate Authorities have not issued SHA-1 certificates since 2015.
+* The [terraform-credentials-env credentials helper](https://github.com/apparentlymart/terraform-credentials-env) has been implemented within Terraform. Users of terraform-credentials-env should note that the TF_TOKEN_* environment variables now take priority over CLI config credentials blocks created by `terraform login`
 
 (Note: the changes to Terraform's requirements when interacting with TLS servers apply only to requests made by Terraform CLI itself, such as provider/module installation and state storage requests. Terraform provider plugins include their own TLS clients which may have different requirements, and may add new requirements in their own releases, independently of Terraform CLI changes.)
 
@@ -12,6 +13,7 @@ NEW FEATURES:
 
 * `precondition` and `postcondition` check blocks for resources, data sources, and module output values: module authors can now document assumptions and assertions about configuration and state values. If these conditions are not met, Terraform will report a custom error message to the user and halt further evaluation.
 * Terraform now supports [run tasks](https://www.terraform.io/cloud-docs/workspaces/settings/run-tasks), a Terraform Cloud integration for executing remote operations, for the post plan stage of a run.
+* You may specify remote network service credentials using an environment variable named after the host name with a `TF_TOKEN_` prefix. For example, the value of a variable named `TF_TOKEN_app_terraform_io` will be used as a bearer authorization token when the CLI makes service requests to the hostname "app.terraform.io".
 
 ENHANCEMENTS:
 
