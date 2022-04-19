@@ -8,4 +8,7 @@ resource "aws_instance" "foo" {
   provisioner "test" {
     test_string = var.secret
   }
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }

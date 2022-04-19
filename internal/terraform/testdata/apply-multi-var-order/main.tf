@@ -5,6 +5,9 @@ variable "num" {
 resource "aws_instance" "bar" {
   count = "${var.num}"
   foo   = "index-${count.index}"
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }
 
 output "should-be-11" {

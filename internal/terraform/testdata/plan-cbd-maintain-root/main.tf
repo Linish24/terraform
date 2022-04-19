@@ -4,6 +4,9 @@ resource "aws_instance" "foo" {
   lifecycle {
     create_before_destroy = true
   }
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }
 
 resource "aws_instance" "bar" {
@@ -11,6 +14,9 @@ resource "aws_instance" "bar" {
 
   lifecycle {
     create_before_destroy = true
+  }
+  tags = {
+    AWS-terra = "AWS-terra"
   }
 }
 

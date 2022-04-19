@@ -4,10 +4,16 @@ locals {
 
 resource "aws_instance" "a" {
   count = "${local.one}"
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }
 
 resource "aws_instance" "b" {
   count = "${local.one}"
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }
 
 output "output" {

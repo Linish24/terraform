@@ -7,10 +7,16 @@ terraform {
 }
 
 resource "aws_instance" "no_count" {
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }
 
 resource "aws_instance" "count" {
   count = 1
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }
 
 resource "boop_instance" "yep" {

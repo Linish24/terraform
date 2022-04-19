@@ -2,6 +2,9 @@ variable "instance_count" {}
 
 resource "aws_instance" "one" {
   count = var.instance_count
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }
 
 locals {
@@ -10,4 +13,7 @@ locals {
 
 resource "aws_instance" "two" {
   value = local.one_id
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }

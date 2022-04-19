@@ -8,4 +8,7 @@ terraform {
 
 resource "aws_instance" "web" {
   provider = "your-aws"
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }

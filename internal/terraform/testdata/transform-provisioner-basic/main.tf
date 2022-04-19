@@ -1,3 +1,6 @@
 resource "aws_instance" "web" {
-    provisioner "shell" {}
+  provisioner "shell" {}
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }

@@ -4,4 +4,7 @@ module "child" {
 
 resource "aws_instance" "bar" {
   foo = "${module.child.num}"
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }

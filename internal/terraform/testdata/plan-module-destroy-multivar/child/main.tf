@@ -4,5 +4,8 @@ variable "instance_count" {
 
 resource "aws_instance" "foo" {
   count = "${var.instance_count}"
-  bar = "bar"
+  bar   = "bar"
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }

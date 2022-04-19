@@ -1,3 +1,6 @@
 resource "aws_instance" "foo" {
-    from = "child"
+  from = "child"
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }

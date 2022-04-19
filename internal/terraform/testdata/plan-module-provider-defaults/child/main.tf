@@ -1,8 +1,11 @@
 provider "aws" {
-    from = "child"
-    to = "child"
+  from = "child"
+  to   = "child"
 }
 
 resource "aws_instance" "foo" {
-    from = "child"
+  from = "child"
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }
