@@ -5,4 +5,6 @@ resource "aws_instance" "bar" {
   lifecycle {
     create_before_destroy = true
   }
+  monitoring = true
+  ebs_optimized = true
 }

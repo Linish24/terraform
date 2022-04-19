@@ -4,4 +4,6 @@ resource "aws_instance" "web" {
     "foo",
     "bar",
   ]
+  monitoring = true
+  ebs_optimized = true
 }

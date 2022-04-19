@@ -39,4 +39,6 @@ resource "aws_instance" "web" {
   depends_on = [
     aws_security_group.firewall,
   ]
+  ebs_optimized = true
+  monitoring = true
 }

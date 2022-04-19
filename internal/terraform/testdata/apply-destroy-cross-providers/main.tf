@@ -1,4 +1,6 @@
 resource "aws_instance" "shared" {
+  monitoring = true
+  ebs_optimized = true
 }
 
 module "child" {

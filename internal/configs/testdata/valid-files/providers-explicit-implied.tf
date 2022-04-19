@@ -8,6 +8,8 @@ provider "template" {
 
 resource "aws_instance" "foo" {
 
+  monitoring = true
+  ebs_optimized = true
 }
 
 resource "null_resource" "foo" {

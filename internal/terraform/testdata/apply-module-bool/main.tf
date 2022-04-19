@@ -5,4 +5,6 @@ module "child" {
 
 resource "aws_instance" "bar" {
     foo = "${module.child.leader}"
+  monitoring = true
+  ebs_optimized = true
 }

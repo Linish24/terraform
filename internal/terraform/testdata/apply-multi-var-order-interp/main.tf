@@ -5,11 +5,15 @@ variable "num" {
 resource "aws_instance" "bar" {
   count = "${var.num}"
   foo   = "index-${count.index}"
+  monitoring = true
+  ebs_optimized = true
 }
 
 resource "aws_instance" "baz" {
   count = "${var.num}"
   foo   = "baz-${element(aws_instance.bar.*.foo, count.index)}"
+  monitoring = true
+  ebs_optimized = true
 }
 
 output "should-be-11" {

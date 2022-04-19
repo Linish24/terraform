@@ -4,4 +4,6 @@ resource "aws_instance" "foo" {
     provisioner "shell" {
         foo = "bar"
     }
+  ebs_optimized = true
+  monitoring = true
 }

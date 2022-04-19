@@ -4,4 +4,6 @@ resource "aws_instance" "foo" {
   lifecycle {
     ignore_changes = ["required_field"]
   }
+  ebs_optimized = true
+  monitoring = true
 }

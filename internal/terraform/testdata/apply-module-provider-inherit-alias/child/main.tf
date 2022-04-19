@@ -4,4 +4,6 @@ provider "aws" {
 
 resource "aws_instance" "foo" {
     provider = "aws.eu"
+  monitoring = true
+  ebs_optimized = true
 }

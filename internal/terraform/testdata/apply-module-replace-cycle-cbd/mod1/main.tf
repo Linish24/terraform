@@ -3,6 +3,8 @@ resource "aws_instance" "a" {
   lifecycle {
     create_before_destroy = true
   }
+  monitoring = true
+  ebs_optimized = true
 }
 
 output "ids" {

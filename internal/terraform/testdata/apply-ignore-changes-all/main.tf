@@ -4,4 +4,6 @@ resource "aws_instance" "foo" {
   lifecycle {
     ignore_changes = all
   }
+  monitoring = true
+  ebs_optimized = true
 }
