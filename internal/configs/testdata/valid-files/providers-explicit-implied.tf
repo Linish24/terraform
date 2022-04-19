@@ -8,6 +8,9 @@ provider "template" {
 
 resource "aws_instance" "foo" {
 
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }
 
 resource "null_resource" "foo" {

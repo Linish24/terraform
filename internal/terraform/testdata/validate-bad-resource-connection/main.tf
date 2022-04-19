@@ -5,4 +5,7 @@ resource "aws_instance" "foo" {
   provisioner "shell" {
     test_string = "test"
   }
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }

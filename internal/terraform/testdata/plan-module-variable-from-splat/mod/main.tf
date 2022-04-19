@@ -5,6 +5,9 @@ variable "param" {
 resource "aws_instance" "test" {
   count = "2"
   thing = "doesnt"
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }
 
 output "out_from_splat" {

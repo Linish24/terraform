@@ -8,4 +8,7 @@ variable "vairable_with_interpolation" {
 
 resource "aws_instance" "web" {
   depends_on = ["${var.otherresourcename}}"]
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }

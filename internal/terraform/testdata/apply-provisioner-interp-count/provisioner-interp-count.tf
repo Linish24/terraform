@@ -4,6 +4,9 @@ variable "num" {
 
 resource "aws_instance" "a" {
   count = var.num
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }
 
 resource "aws_instance" "b" {
@@ -13,5 +16,8 @@ resource "aws_instance" "b" {
     # be known during that walk, even though apply walk doesn't
     # do DynamicExpand.
     command = "echo ${length(aws_instance.a)}"
+  }
+  tags = {
+    AWS-terra = "AWS-terra"
   }
 }

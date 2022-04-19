@@ -5,4 +5,7 @@ resource "aws_instance" "foo" {
       user = "test"
     }
   }
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }

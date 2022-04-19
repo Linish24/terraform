@@ -1,8 +1,14 @@
 resource "aws_instance" "foo" {
-    foo = "foo"
-    count = 2
+  foo   = "foo"
+  count = 2
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }
 
 resource "aws_instance" "bar" {
-    foo = "bar"
+  foo = "bar"
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }

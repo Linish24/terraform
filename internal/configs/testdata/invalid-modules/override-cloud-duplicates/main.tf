@@ -1,6 +1,6 @@
 terraform {
   cloud {
-    organization = "foo"
+    organization                        = "foo"
     should_not_be_present_with_override = true
   }
 }
@@ -11,4 +11,7 @@ resource "aws_instance" "web" {
     "foo",
     "bar",
   ]
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }

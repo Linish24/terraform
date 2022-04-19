@@ -4,4 +4,7 @@ provider "aws" {
 
 resource "aws_instance" "bar" {
   provider = "aws.mod"
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }

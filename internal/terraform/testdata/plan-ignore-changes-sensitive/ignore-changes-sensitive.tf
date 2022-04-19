@@ -8,4 +8,7 @@ resource "aws_instance" "foo" {
   lifecycle {
     ignore_changes = [ami]
   }
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }

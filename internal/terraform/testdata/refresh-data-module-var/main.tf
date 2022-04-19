@@ -1,5 +1,8 @@
 resource "aws_instance" "A" {
   foo = "bar"
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }
 
 module "child" {

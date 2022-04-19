@@ -1,5 +1,8 @@
 resource "aws_instance" "source" {
   attr = "foo"
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }
 
 output "sourceout" {

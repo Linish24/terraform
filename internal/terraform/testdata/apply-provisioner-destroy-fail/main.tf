@@ -11,4 +11,7 @@ resource "aws_instance" "foo" {
     command = "two"
     when    = "destroy"
   }
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }

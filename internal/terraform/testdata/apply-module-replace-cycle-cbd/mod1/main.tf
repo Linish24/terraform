@@ -3,6 +3,9 @@ resource "aws_instance" "a" {
   lifecycle {
     create_before_destroy = true
   }
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }
 
 output "ids" {

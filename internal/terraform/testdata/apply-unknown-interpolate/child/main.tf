@@ -1,5 +1,8 @@
 variable "value" {}
 
 resource "aws_instance" "bar" {
-    foo = "${var.value}"
+  foo = "${var.value}"
+  tags = {
+    AWS-terra = "AWS-terra"
+  }
 }
